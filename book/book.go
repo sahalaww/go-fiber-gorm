@@ -7,18 +7,12 @@ import(
 	"time"
 )
 
-type OwnModel struct {
-	gorm.Model
-    ID        uint       `gorm:"primary_key"`
-    CreatedAt time.Time  `json:"-"`
-    UpdatedAt time.Time  `json:"-"`
-    DeletedAt *time.Time `json:"-"`
-}
+
 type Book struct {
 	ID        uint       `gorm:"primary_key"`
-    CreatedAt time.Time  `json:"-"`
-    UpdatedAt time.Time  `json:"-"`
-    DeletedAt *time.Time `json:"-";sql:"index"`
+    	CreatedAt time.Time  `json:"-"`
+    	UpdatedAt time.Time  `json:"-"`
+    	DeletedAt *time.Time `json:"-";sql:"index"`
 	Title string `json:"title"`
 	Author string `json:"author"`
 	Rating int `json:"rating"`
