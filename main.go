@@ -12,6 +12,7 @@ import (
 func helloWorld(c *fiber.Ctx){
 	c.Send("Hello Dunia!")
 }
+
 func serverRoot(c *fiber.Ctx){
 	c.Send("v1-running")
 }
@@ -28,12 +29,14 @@ func initDB(){
 	fmt.Println("DB Migrated")
 
 }
+
 func routeBook(app *fiber.App){
 	app.Get("/api/v1/book/", book.GetBooks)
 	app.Get("/api/v1/book/:id", book.GetBook)
 	app.Post("/api/v1/book/", book.PostBook)
 	app.Delete("/api/v1/book/:id", book.DeleteBook)
 }
+
 func main(){
 	app := fiber.New()
 	initDB()
